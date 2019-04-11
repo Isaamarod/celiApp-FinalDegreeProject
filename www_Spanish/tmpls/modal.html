@@ -1,0 +1,305 @@
+<% 	event.date_start = new Date(parseInt(event.start));
+event.date_end = new Date(parseInt(event.end));
+%>
+
+<div>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Estado An&iacute;mico</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Resultados Anal&iacute;tica</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Control del Peso</a></li>
+        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Control Menstruaci&oacute;n</a></li>
+        <li role="presentation"><a href="#testOrina" aria-controls="settings" role="tab" data-toggle="tab">Test Orina</a></li>
+        <li role="presentation"><a href="#testBristol" aria-controls="settings" role="tab" data-toggle="tab">Test de Bristol</a></li>
+        <li role="presentation"><a href="#modalSintomas" aria-controls="settings" role="tab" data-toggle="tab">Síntomas</a></li>
+        <li role="presentation"><a href="#modalDoloresArt" aria-controls="settings" role="tab" data-toggle="tab">Dolores Articulares</a></li>
+        <li role="presentation"><a href="#modalApetito" aria-controls="settings" role="tab" data-toggle="tab">Apetito</a></li>
+
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+            <p>¿Cómo te encuentras hoy?</p>
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-info active">
+                    <input type="radio" name="estados" value="1" autocomplete="off" checked />
+                    <i class="em em-grinning" style="zoom:2;"></i>
+                </label>
+                <label class="btn btn-info">
+                    <input type="radio" name="estados" value="2" autocomplete="off">
+                    <i class="em em-blush" style="zoom:2;"></i>
+                </label>
+                <label class="btn btn-info">
+                    <input type="radio" name="estados" value="3" autocomplete="off">
+                    <i class="em em-bowtie" style="zoom:2;"></i>
+                </label>
+                <label class="btn btn-info">
+                    <input type="radio" name="estados" value="4" autocomplete="off">
+                    <i class="em em-sunrise" id="relajado" style="zoom:2;"></i>
+                </label>
+                <label class="btn btn-info">
+                    <input type="radio" name="estados" value="5" autocomplete="off">
+                    <i class="em em-pensive" id="triste"style="zoom:2;"></i>
+                </label>
+                <label class="btn btn-info">
+                    <input type="radio" name="estados" value="6" autocomplete="off">
+                    <i class="em em-sweat_smile" id="cansado" style="zoom:2;"></i>
+                </label>
+                <label class="btn btn-info">
+                    <input type="radio" name="estados" value="6" autocomplete="off">
+                    <i class="em em-sweat" id="estresado" style="zoom:2;"></i>
+                </label>
+
+                <label class="btn btn-info">
+                    <input type="radio" name="estados" value="7" autocomplete="off">
+                    <i class="em em-stuck_out_tongue_closed_eyes"id="nervioso" style="zoom:2;"></i>
+                </label>
+
+
+            </div>
+
+
+
+
+        </div>
+        <div role="tabpanel" class="tab-pane" id="profile" style="">
+
+            <div  class="col-xs-6"id="insertaResultado"> <!-- mas adelante jscript que lo guarde en la bd -->
+                <p>¡Aquí puedes introducir el resultado de tu última prueba!</p>
+                <label for="Dato1" class="control-label">Dato 1</label>
+                <input type="number" id="Dato1" placeholder="Dato Analítica 1"/>
+                <br>
+                <label for="Dato1" class="control-label">Dato 2</label>
+                <input type="number" id="Dato2" placeholder="Dato Analítica 2"/>
+                <br>
+                <label for="Dato3" class="control-label">Dato 3</label>
+                <input type="number" id="Dato3" placeholder="Dato Analítica 3"/>
+                <br>
+                <label for="Dato4" class="control-label">Dato 4</label>
+                <input type="number" id="Dato4" placeholder="Dato Analítica 4"/>
+                <br>
+                <label for="Dato5" class="control-label">Dato 5</label>
+                <input type="number" id="Dato5" placeholder="Dato Analítica 5"/>
+            </div>
+            <div  class="col-xs-6"id="insertaResultado2">
+                <br>
+                <label for="Dato6" class="control-label">Dato 6</label>
+                <input type="number" id="Dato6" placeholder="Dato Analítica 6"/>
+                <br>
+                <label for="Dato7" class="control-label">Dato 7</label>
+                <input type="number" id="Dato7" placeholder="Dato Analítica 7"/>
+                <br>
+                <label for="Dato8" class="control-label">Dato 8</label>
+                <input type="number" id="Dato8" placeholder="Dato Analítica 8"/>
+                <br>
+                <label for="Dato9" class="control-label">Dato 9</label>
+                <input type="number" id="Dato9" placeholder="Dato Analítica 9"/>
+                <br>
+                <label for="Dato10" class="control-label">Dato 10</label>
+                <input type="number" id="Dato10" placeholder="Dato Analítica 10"/>
+                <br>
+            </div>
+
+        </div>
+        <div role="tabpanel" class="tab-pane" id="messages">
+            <div id="insertaPeso"> <!-- mas adelante jscript que lo guarde en la bd -->
+                <p>Introduce tu peso y tu altura</p>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label for="peso" class="control-label">Peso en Kg</label>
+                        <input type="number" class="form-control bfh-number" id="peso" name="peso" value="50" data-zeros="true" data-min="0" data-max="1000" placeholder="Peso">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="altura" class="control-label">Altura en cm</label>
+                    <input type="number" class="form-control bfh-number" id="altura" name="altura" value="150" data-zeros="true" data-min="0" data-max="1000" placeholder="Altura">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <label for="imc" class="control-label">IMC</label>
+                    <input type="number" readonly class="form-control bfh-number" id="imc" name="imc" data-zeros="true" data-min="0" data-max="1000" placeholde="Indice Masa Corporal">
+                    <input type="text" readonly class="form-control bfh-number" id="imcRango" name="imcRango" data-zeros="true" data-min="0" data-max="1000" placeholder="Rango IMC">                 </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="settings">
+            <div id="insertaMenstruacion"> <!-- mas adelante jscript que lo guarde en la bd -->
+                <p>Selecciona mediante estrellas la cantidad de sangrado que has tenido hoy: </p>
+                <div class="row">
+                    <div class="col-xs-6">
+
+                        <input id="rating-sangrado" name="rating-sangrado" class="rating-loading"/>
+                        <label for="rating-sangrado" class="control-labeol" style="color:grey">(A más estrellas mayor sangrado)</label>
+                        <br>
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-primary">
+                                <input type="radio" name="tipomenstruacion" value="inicio" autocomplete="off"> Fecha de Inicio
+                            </label>
+                            <label class="btn btn-primary">
+                                <input type="radio" name="tipomenstruacion" value="fin" autocomplete="off"> Fecha Fin
+                            </label>
+                        </div>
+                        <br>
+                        <label for="anticonceptivoRadio" class="control-label">¿Usas anticonceptivo?</label>
+                        <input type="checkbox" id="anticonceptivoRadio" >
+                        <div class="btn-group" data-toggle="buttons">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="testOrina">
+            <div id="insertaTestOrina"> <!-- mas adelante jscript que lo guarde en la bd -->
+                <p>¿Cuál ha sido el resultado del test? </p>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <img style=" width: 100%; max-height: 270px" src="img/tiras_ovulacion.jpg" id="testOrinaImg"/>
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="radio" id= "positivo" name="orina" value="positivo">
+                        <label for="positivo">  Positivo</label>
+                        <input type="radio" id= "invalido" name="orina" value="invalido">
+                        <label for="positivo">  Inválido</label>
+                        <input type="radio" id= "negativo" name="orina" value="negativo">
+                        <label for="positivo">  Negativo</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="testBristol">
+            <div id="insertaTestBristol"> <!-- mas adelante jscript que lo guarde en la bd -->
+                <p>¿Cuál ha sido el resultado del test? </p>
+                <div class="col-xs-8">
+                    <img src="img/Bristol-Stool-Form-Chart.png" id="testBristolImg" style="width: 100%; max-height: 271px"/>
+                </div>
+                <div class="col-xs-4">
+                    <input type="radio" id="1" value="1" name="bristol">
+                    <label for="1">  Tipo 1 </label>
+                    <br>
+                    <input type="radio" id="2" value="2" name="bristol">
+                    <label for="2">  Tipo 2</label>
+                    <br>
+                    <input type="radio" id="3" value="3" name="bristol">
+                    <label for="3">  Tipo 3</label>
+                    <br>
+                    <input type="radio" id="4" value="4" name="bristol">
+                    <label for="4">  Tipo 4</label>
+                    <br>
+                    <input type="radio" id="5" value="5" name="bristol">
+                    <label for="5">  Tipo 5</label>
+                    <br>
+                    <input type="radio" id="6" value="6" name="bristol">
+                    <label for="6">  Tipo 6</label>
+                    <br>
+                    <input type="radio" id="7" value="7" name="bristol">
+                    <label for="7">  Tipo 7</label>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="modalSintomas" style="margin-top: 35px;">
+            <label for="sintomascheck" class="control-label">Vómitos</label>
+            <input type="checkbox" id="sintomascheck" value="2" > <!-- value 2 porque corresponde al id de la bd asi es mas facil-->
+            <br>
+            <label for="sintomascheck2" class="control-label">Uñas frágiles</label>
+            <input type="checkbox" id="sintomascheck2" value="3" > <!-- value 2 porque corresponde al id de la bd asi es mas facil-->
+            <br>
+            <label for="sintomascheck3" class="control-label">Pérdida de cabello</label>
+            <input type="checkbox" id="sintomascheck3" value="4" > <!-- value 2 porque corresponde al id de la bd asi es mas facil-->
+            <br>
+            <label for="sintomascheck4" class="control-label">Ampollas en la piel</label>
+            <input type="checkbox" id="sintomascheck4" value="5" > <!-- value 2 porque corresponde al id de la bd asi es mas facil-->
+            <br>
+            <label for="sintomascheck5" class="control-label">Ronchas en la piel</label>
+            <input type="checkbox" id="sintomascheck5" value="6" > <!-- value 2 porque corresponde al id de la bd asi es mas facil-->
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="modalDoloresArt" style="margin-top: 35px;">
+            <label for="Artcheck1" class="control-label">Dolores de huesos</label>
+            <input type="checkbox" id="Artcheck1" value="1" > <!-- value 2 porque corresponde al id de la bd asi es mas facil-->
+            <br>
+            <label for="Artcheck2" class="control-label">Dolores de articulaciones superiores</label>
+            <input type="checkbox" id="Artcheck2" value="2" > <!-- value 2 porque corresponde al id de la bd asi es mas facil-->
+            <br>
+            <label for="Artcheck3" class="control-label">Dolores de articulaciones inferiores</label>
+            <input type="checkbox" id="Artcheck3" value="3" > <!-- value 2 porque corresponde al id de la bd asi es mas facil-->
+            <br>
+            <label for="Artcheck4" class="control-label">Dolor abdominal</label>
+            <input type="checkbox" id="Artcheck4" value="4" > <!-- value 2 porque corresponde al id de la bd asi es mas facil-->
+            <br>
+            <label for="Artcheck5" class="control-label">Calambres musculares</label>
+            <input type="checkbox" id="Artcheck5" value="5" > <!-- value 2 porque corresponde al id de la bd asi es mas facil-->
+        </div>
+
+
+        <div role="tabpanel" class="tab-pane" id="modalApetito">
+            <input type="radio" id="poco" value="1" name="apetito">
+            <label for="1">Poco</label>
+            <br>
+            <input type="radio" id="algo" value="2" name="apetito">
+            <label for="2">Algo</label>
+            <br>
+            <input type="radio" id="normal" value="3" name="apetito">
+            <label for="3">Normal</label>
+            <br>
+            <input type="radio" id="mucho" value="4" name="apetito">
+            <label for="4"> Mucho</label>
+            <br>
+        </div>
+    </div>
+</div>
+
+<%
+    setTimeout(function(data){
+<!-- recibimos los datos almacenados en ese evento -->
+<!-- estado_animico-->
+        $("input[name='estados'][value='" + data.estado_animico + "']").attr('checked', 'checked');
+<!--analitica -->
+        $("#Dato1").val(data.valor_analitica1);
+        $("#Dato2").val(data.valor_analitica2);
+        $("#Dato3").val(data.valor_analitica3);
+        $("#Dato4").val(data.valor_analitica4);
+        $("#Dato5").val(data.valor_analitica5);
+        $("#Dato6").val(data.valor_analitica6);
+        $("#Dato7").val(data.valor_analitica7);
+        $("#Dato8").val(data.valor_analitica8);
+        $("#Dato9").val(data.valor_analitica9);
+        $("#Dato10").val(data.valor_analitica10);
+<!--peso -->
+        $("#peso").val(data.peso);
+        $("#altura").val(data.altura);
+        $("#imc").val(data.imc);
+<!--menstruacion -->
+        $('#rating-sangrado').rating('update', data.datos_menstruales4_sangrado);
+        if(data.datos_menstruales1_fecha_inicio)
+            $("input[name='tipomenstruacion'][value='inicio']").attr('checked', 'checked');
+        else if(data.datos_menstruales1_fecha_fin)
+            $("input[name='tipomenstruacion'][value='fin']").attr('checked', 'checked');
+        $("#anticonceptivoRadio").val(data.datos_menstruales5_anticonceptivo);
+<!--testOrina -->
+        $("input[name='testOrina'][value='" + data. + "']").attr('checked', 'checked');
+
+<!--testBristol -->
+
+        $("input[name='testBristol'][value='" + data.test_fecal + "']").attr('checked', 'checked');
+<!--modalSintomas -->
+
+<!--Cómo pongo todos los datos del check? recorro los resultados almacenados con las comas??
+-->
+
+
+
+
+<!--modalApetito -->
+modalApetito
+
+
+
+    }.bind(this, event.event_data), 200);
+%>
